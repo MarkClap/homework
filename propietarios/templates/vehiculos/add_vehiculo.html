@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Vehículo</title>
+</head>
+<body>
+    <h1>Agregar Vehículo</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="matricula">Matrícula:</label>
+        <input type="text" id="matricula" name="matricula" required><br>
+
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca" name="marca" required><br>
+
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" name="modelo" required><br>
+
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" required><br>
+
+        <label for="propietario">Propietario:</label>
+        <select id="propietario" name="propietario" required>
+            {% for propietario in propietarios %}
+                <option value="{{ propietario.id }}">{{ propietario.name }}</option>
+            {% endfor %}
+        </select><br>
+
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="{% url 'list_vehiculos' %}">Volver a la lista de vehículos</a>
+</body>
+</html>

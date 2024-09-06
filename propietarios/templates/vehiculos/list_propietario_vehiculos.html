@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehículos de {{ propietario.name }}</title>
+</head>
+<body>
+    <h1>Vehículos de {{ propietario.name }}</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Matrícula</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Color</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vehiculo in vehiculos %}
+                <tr>
+                    <td>{{ vehiculo.matricula }}</td>
+                    <td>{{ vehiculo.marca }}</td>
+                    <td>{{ vehiculo.modelo }}</td>
+                    <td>{{ vehiculo.color }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No hay vehículos asociados a este propietario.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'list_vehiculos' %}">Volver a la lista de vehículos</a>
+</body>
+</html>

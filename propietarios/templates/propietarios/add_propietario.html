@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Propietario</title>
+</head>
+<body>
+    <h1>Agregar Propietario</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="number_depart">Departamento:</label>
+        <input type="text" id="number_depart" name="number_depart" required><br>
+
+        <label for="phone_number">Teléfono:</label>
+        <input type="text" id="phone_number" name="phone_number" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="{% url 'list_propietarios' %}">Volver a la lista</a>
+</body>
+</html>
