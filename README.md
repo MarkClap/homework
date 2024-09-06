@@ -1,4 +1,5 @@
-1- Descargar
-2- Descomprimir
-3- Abrir una terminal en el archivo previo
-4-Luego instalas django "pip3 install django"
+- Descargar
+- Descomprimir
+- Abrir una terminal en el archivo previo
+- Luego instalas django "pip3 install django"
+- Levantar el server "py manage.py runserver"
